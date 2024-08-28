@@ -54,9 +54,12 @@ export function BlogForm() {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     const name = values.title?.slice(0, 5);
 
+    console.log("rawFile : ", file);
+
     await uploadFile(file, name)
       .then(async (res) => {
         const imageHash = res;
+        console.log('imageHash: ', imageHash);
 
         await fetch(`${process.env.NEXT_PUBLIC_APPURL}/api/blogs`, {
           method: "POST",

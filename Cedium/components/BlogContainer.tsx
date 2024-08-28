@@ -22,6 +22,9 @@ const BlogContainer = ({ blog }: any) => {
 
   const trimmed = description?.slice(0, 150) + "..."; // trims description to 150 characters
 
+  console.log("author iamge : ", author?.image);
+  console.log("blogImage : ", blog);
+
   return (
     <main className="w-full flex flex-wrap max-sm:flex-col-reverse justify-between items-center p-4 border-b pb-5 border-gray-300">
       {/* left side */}
